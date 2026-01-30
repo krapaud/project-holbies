@@ -20,6 +20,7 @@ tests/
 ## Installation
 
 Pour installer les outils de test :
+
 ```bash
 pip install pytest pytest-asyncio httpx
 ```
@@ -38,6 +39,7 @@ pytest tests/unit/test_models.py
 ```
 
 ## TODO
+
 - [ ] Ajouter des tests unitaires pour les modèles
 - [ ] Ajouter des tests d'intégration pour l'API
 - [ ] Configurer la couverture de code
