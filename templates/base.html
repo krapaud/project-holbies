@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Holbies Learning Hub{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/global.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Source+Code+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+    <style>
+        .nav-user {
+            color: #00ff41;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 0.9rem;
+            margin-right: 1rem;
+            padding: 0.5rem;
+            border: 1px solid rgba(0, 255, 65, 0.3);
+            border-radius: 4px;
+            background: rgba(0, 255, 65, 0.1);
+        }
+        
+        /* Style pour le lien logo */
+        .logo-link {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-link:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-link:hover .logo-text {
+            text-shadow: 0 0 20px rgba(0, 255, 65, 0.8);
+        }
+        
+        @media (max-width: 768px) {
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <div class="matrix-bg"></div>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/" class="logo-link">
+                    <span class="logo-text">HOLBIES</span>
+                    <span class="logo-subtext">Learning Hub</span>
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="/learning" class="nav-link">Learning Hub</a>
+                <a href="/tutor" class="nav-link">HLH Tutor</a>
+                <a href="/dashboard" class="nav-link">Dashboard</a>
+                <a href="/login" class="nav-link" id="auth-link">Connexion</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Holbies Learning Hub. Tous droits réservés.</p>
+            <p>Système de quiz interactif pour développeurs</p>
+        </div>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
+    <script src="/static/js/video-modal.js"></script>
+    <script src="/static/js/welcome-video-generator.js"></script>
+    
+    {% block scripts %}{% endblock %}
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

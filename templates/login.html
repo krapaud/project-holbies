@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="auth-section">
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1 class="auth-title">Connexion</h1>
+                <p class="auth-subtitle">Accédez à votre espace d'apprentissage</p>
+            </div>
+            
+            <form class="auth-form" id="login-form">
+                <div class="form-group">
+                    <label for="username">Nom d'utilisateur</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-full">
+                    <span>Se connecter</span>
+                    <div class="btn-loading"></div>
+                </button>
+            </form>
+            
+            <div class="auth-footer">
+                <p>Pas encore de compte ? <a href="/register">S'inscrire</a></p>
+                <p style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--matrix-gray); color: var(--text-muted); font-size: 0.9rem;">
+                    <span id="test-status" style="margin-left: 0.5rem; font-size: 0.8rem;"></span>
+                </p>
+            </div>
+            <div class="auth-message" id="auth-message"></div>
+        </div>
+        <div class="auth-visual">
+            <div class="matrix-code">
+                <div class="code-stream">
+                    <span>01010010</span>
+                    <span>01001101</span>
+                    <span>01100001</span>
+                    <span>01110010</span>
+                    <span>01100011</span>
+                    <span>01100001</span>
+                    <span>01101001</span>
+                    <span>01110011</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/auth.js"></script>
+<script src="/static/js/video-test.js"></script>
+<script src="/static/js/quick-video-test.js"></script>
+<script src="/static/js/debug-video.js"></script>
+{% endblock %}
